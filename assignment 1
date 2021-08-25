@@ -1,0 +1,35 @@
+import java.util.Stack;
+public class ArrayStackDemo {
+    public static int maximumElement(Stack<Integer> inputStack) {
+        Stack<Integer> temp = new Stack<>();
+//yazan taqatqa //201920236
+        int maxElement = Integer.MIN_VALUE;
+        int currentElement;
+        while (!inputStack.empty()) {
+             currentElement = inputStack.pop();
+             maxElement = Integer.max(maxElement, currentElement);
+             temp.push(currentElement);
+        }
+        while (!temp.empty()) {
+            inputStack.push(temp.pop());
+        }
+        return maxElement;
+    }
+//yazan taqatqa //201920236
+    public static void main(String[] args) {
+        Stack<Integer> sampleStack = new Stack<>();
+        sampleStack.push(3);
+        sampleStack.push(5);
+        sampleStack.push(6);
+        sampleStack.push(1);
+        sampleStack.push(9);
+        sampleStack.push(2);
+        System.out.println("Stack before getting the max element...");
+        System.out.println(sampleStack);s
+        int maxElement = maximumElement(sampleStack);
+        System.out.printf("Max element: %d\n", maxElement);
+        System.out.println("Stack after getting the max element...");
+        System.out.println(sampleStack);
+    }
+}
+//yazan taqatqa //201920236
