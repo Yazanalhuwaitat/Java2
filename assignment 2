@@ -1,0 +1,13 @@
+public class ArrayQueueDemo {
+public static<Integer> ArrayUnbndQueue mergeQueue(ArrayBndQueue<Integer> first, ArrayBndQueue<Integer> second) {
+        ArrayUnbndQueue<Integer> result = new ArrayUnbndQueue();
+        while (!first.isEmpty()) {
+            result.enqueue(first.dequeue());
+        }
+        while (!second.isEmpty()) {
+            result.enqueue(second.dequeue());
+        }
+        return result;
+    }
+    }
+//yazan taqatqa //201920236
